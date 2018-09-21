@@ -1,0 +1,10 @@
+body{
+	background-color: #3A5CD4;
+}
+canvas{
+	background-image: url('../assets/img/airStage.jpg');
+	border: 1px black solid; 
+	margin-left: 25%;
+	margin-right: 340px;
+	margin-top: 200px;
+}
