@@ -69,8 +69,20 @@ function draw() {
             ctx.moveTo(340,360); //perna esquerda
             ctx.lineTo(320,400);
 
+
             ctx.moveTo(340,360); //perna direita
             ctx.lineTo(360,400);
+
+    document.addEventListener('keydown', keyDown);
+
+    function keyDown(e) {
+        if(e.keyCode == 85){
+            console.log('ataque');
+        }
+    }
+
+    ctx.moveTo(295,305);
+
 
         //-----------------------------------------------------------------
             ctx.lineWidth = 5;
@@ -191,5 +203,7 @@ function draw() {
 
 
         
-    }
+    
+
+  }
 }
