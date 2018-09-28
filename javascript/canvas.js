@@ -20,7 +20,7 @@ function draw() {
 
 
     ctx.moveTo(340,320); // braço esquerdo
-    ctx.lineTo(310,315);
+    ctx.lineTo(310,315); //passar o Line <<<
 
     ctx.moveTo(310,315); // ante-braço esquerdo
     ctx.lineTo(310,285);
@@ -101,6 +101,7 @@ function draw() {
     ctx.stroke();
     */
 
+<<<<<<< HEAD
     document.addEventListener('keydown', keyDown);
 
     function keyDown(e) {
@@ -108,5 +109,20 @@ function draw() {
             console.log('ataque');
         }
     }
+=======
+    ctx.moveTo(295,305);
+
+    img = document.getElementById('zikuda');
+
+    
+    ctx.drawImage(img , 245, 140);
+
+    function ataque(e){
+
+        if()
+
+    }
+
+>>>>>>> 9d1d084f3cb2b3d92405a165aaaacc566d3184a1
   }
 }
