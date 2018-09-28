@@ -24,14 +24,23 @@ function draw() {
 
     ctx.moveTo(310,315); // ante-braço esquerdo
     ctx.lineTo(310,285);
+    ctx.moveTo(295,305);
+    ctx.lineWidth = 5;
+    ctx.stroke();
+//----------------------Foice--------------------------------------
+
+    img = document.getElementById('zikuda');
+    ctx.drawImage(img , 245, 140);
 
 //---------------------Braço Direito-------------------------------
-
+    ctx.beginPath();
     ctx.moveTo(340,320); // braço direito
     ctx.lineTo(310,325);
 
     ctx.moveTo(310,325); // ante-braço direito
     ctx.lineTo(305,295);
+
+
 
 //---------------------Perna---------------------------------------
 
@@ -91,6 +100,7 @@ function draw() {
     ctx.lineWidth = 10;
     ctx.stroke();
     */
+
     ctx.moveTo(295,305);
 
     img = document.getElementById('zikuda');
