@@ -1,3 +1,5 @@
+
+
 function draw() {
 
 
@@ -16,7 +18,7 @@ function draw() {
 
             virarPraEsquerda();
 
-        }else if(e.keyCode == 40){
+        }else if(e.keyCode == 32){
 
             console.log(e.keyCode);
 
@@ -28,6 +30,7 @@ function draw() {
 
         function virarPraEsquerda(){
 
+            ctx.clearRect(0,0,680,400);  
             ctx.beginPath();
             ctx.arc(340, 300, 20, 0, Math.PI * 2, true); // Círculo exterior
             ctx.fillStyle = "black"; //colorindo a porra da cabeça do personagem do canvas
@@ -51,7 +54,7 @@ function draw() {
             ctx.stroke();
         //----------------------Foice--------------------------------------
 
-            img = document.getElementById('zikuda');
+            img = document.getElementById('zikudaDir');
             ctx.drawImage(img , 245, 140);
 
         //---------------------Braço Direito-------------------------------
@@ -69,34 +72,20 @@ function draw() {
             ctx.moveTo(340,360); //perna esquerda
             ctx.lineTo(320,400);
 
-
             ctx.moveTo(340,360); //perna direita
             ctx.lineTo(360,400);
-
-    document.addEventListener('keydown', keyDown);
-
-    function keyDown(e) {
-        if(e.keyCode == 85){
-            console.log('ataque');
-        }
-    }
-
-    ctx.moveTo(295,305);
-
 
         //-----------------------------------------------------------------
             ctx.lineWidth = 5;
             ctx.stroke();
-
-            ctx.moveTo(295,305);
-            img = document.getElementById('zikuda');
-            ctx.drawImage(img , 245, 140);
             ctx.save();
+
         }
 
         
         function virarPraDireita(){
 
+            ctx.clearRect(0,0,680,400);
             ctx.beginPath();
             ctx.arc(340, 300, 20, 0, Math.PI * 2, true); // Círculo exterior
             ctx.fillStyle = "black"; //colorindo a porra da cabeça do personagem do canvas
@@ -106,31 +95,32 @@ function draw() {
 
             ctx.moveTo(340,320); // corpo
             ctx.lineTo(340,360);
+        //---------------------Braço Direito-------------------------------
+            
+            ctx.moveTo(340,320); // braço direito
+            ctx.lineTo(370,315);
 
-        //---------------------Braço Esquerdo------------------------------
-
-
-            ctx.moveTo(340,320); // braço esquerdo
-            ctx.lineTo(310,315); //passar o Line <<<
-
-            ctx.moveTo(310,315); // ante-braço esquerdo
-            ctx.lineTo(310,285);
-            ctx.moveTo(295,305);
-            ctx.lineWidth = 5;
+            ctx.moveTo(370,315); // ante-braço direito
+            ctx.lineTo(375,285);
             ctx.stroke();
         //----------------------Foice--------------------------------------
 
-            img = document.getElementById('zikuda');
-            ctx.scale(-1,1);
-            ctx.drawImage(img , 245, 140);
+            img = document.getElementById('zikudaEsq');
+            ctx.drawImage(img , 310, 140);
+        //---------------------Braço Esquerdo------------------------------
 
-        //---------------------Braço Direito-------------------------------
             ctx.beginPath();
-            ctx.moveTo(340,320); // braço direito
-            ctx.lineTo(310,325);
+            ctx.moveTo(340,320); // braço esquerdo
+            ctx.lineTo(370,325); //passar o Line <<<
 
-            ctx.moveTo(310,325); // ante-braço direito
-            ctx.lineTo(305,295);
+            ctx.moveTo(370,325); // ante-braço esquerdo
+            ctx.lineTo(375,295);
+
+            ctx.moveTo(295,305);
+            ctx.lineWidth = 5;
+            ctx.stroke();
+
+        
 
 
 
@@ -145,10 +135,6 @@ function draw() {
         //-----------------------------------------------------------------
             ctx.lineWidth = 5;
             ctx.stroke();
-
-            ctx.moveTo(295,305);
-            img = document.getElementById('zikuda');
-            ctx.drawImage(img , 245, 140);
             ctx.save();
 
         }
@@ -203,7 +189,5 @@ function draw() {
 
 
         
-    
-
-  }
+    }
 }
