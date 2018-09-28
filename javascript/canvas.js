@@ -101,5 +101,12 @@ function draw() {
     ctx.stroke();
     */
 
+    document.addEventListener('keydown', keyDown);
+
+    function keyDown(e) {
+        if(e.keyCode == 85){
+            console.log('ataque');
+        }
+    }
   }
 }
