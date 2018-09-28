@@ -1,8 +1,8 @@
 body{
-	background-color: #3A5CD4;
+	background-color: #444;
 }
 canvas{
-	background-image: url('../assets/img/airStage.jpg');
+	background-image: url('../assets/img/oMundoPretoEWhite.png');
 	border: 1px black solid; 
 	margin-left: 25%;
 	margin-right: 340px;

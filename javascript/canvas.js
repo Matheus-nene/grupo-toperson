@@ -65,7 +65,7 @@ function draw() {
     ctx.lineTo(50,12.5);
     ctx.fillStyle = "#3B3B3B";
     ctx.fill();
-    */
+    
 
     ctx.beginPath();
     ctx.moveTo(295,305);
@@ -90,5 +90,9 @@ function draw() {
     ctx.lineTo(380,200);
     ctx.lineWidth = 10;
     ctx.stroke();
+    */
+    ctx.moveTo(295,305);
+    img = document.getElementById('zikuda');
+    ctx.drawImage(img , 250, 20);
   }
 }
