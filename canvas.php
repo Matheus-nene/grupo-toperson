@@ -3,15 +3,43 @@
 <head>
 	<title>Jogo</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="javascript/script.js"></script>
+	<script type="text/javascript" src="javascript/jquery-3.3.1.min.js"></script>
 </head>
-<body onload="draw()">
-	<canvas id="canvas" width="680" height="400">
+<body id="body">
+	<div class="titulo">
+		<h1 class="title">Bem-vindo ao F.O.D.E.U. Projeto</h1>
+		<h2 class="title">Fight Of Destructive Endless Universe</h2>
+	</div>
+	<div class="principal" id="principal" style="display:block">
+		<div class="borda">
+			<button type="button" onclick="draw()" class="botoes">INICIAR</button>
+			<button type="button" onclick="opcoes()" class="botoes">MODO DE JOGO</button>
+			<button type="button" onclick="abrirScore()" class="botoes">PONTUAÇÃO</button>
+		</div>
+	</div>
+	<div class="opcoes" id="opcoes" style="display:none">
+		<div class="borda">
+			<span class="voltar" onclick="voltarMenu()">VOLTAR</span>
+				<button type="button" id="Dia" class="botoes botoesOP" onclick="ativaDia()">Dia</button><br>
+				<button type="button" id="Noite" class="botoes botoesOP" onclick="ativaNoite()" style="color:blue">Noite</button><hr>
+				<button type="button" id="PT" class="botoes botoesOP" onclick="ativaPT()" style="color:blue">Portugues</button><br>
+				<button type="button" id="EN" class="botoes botoesOP" onclick="ativaEN()">Inglês</button>
+		</div>
+	</div>
+
+	<canvas id="canvas" width="680" height="400" style="display: none">
 		este navegador não suporta canvas!
 	</canvas>
 
-	<img src="assets/img/ZikudaDir.png" style="display: none;" id="zikudaEsq" height="150">
-	<img src="assets/img/ZikudaEsq.png" style="display: none;" id="zikudaDir" height="150">
-	<script type="text/javascript" src="javascript/canvas.js"></script>
+	<img src="assets/img/BonecoEsq01.png" style="display: none" id="zikudaEsq" height="150">
+	<img src="assets/img/BonecoDir01.png" style="display: none" id="zikudaDir" height="150">
+	<img src="assets/img/BonecoEsq02.png" style="display: none" id="zikudaEsq01" height="150">
+	<img src="assets/img/BonecoDir02.png" style="display: none" id="zikudaDir01" height="150">
+	<img src="assets/img/BonecoEsq03.png" style="display: none" id="zikudaEsq02" height="150">
+	<img src="assets/img/BonecoDir03.png" style="display: none" id="zikudaDir02" height="150">
 	
+
+
 </body>
 </html>
