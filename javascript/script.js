@@ -80,7 +80,7 @@ var draw = () => {
 
 		function virarPraEsquerda(){
 
-			ctx.clearRect(0,0,680,400);
+			ctx.clearRect(290,0,100,400);
 			ctx.beginPath();
 			img = document.getElementById('zikudaEsq');
 			ctx.drawImage(img, 270, 180);
@@ -89,7 +89,7 @@ var draw = () => {
 
 		function virarPraDireita(){
 
-			ctx.clearRect(0,0,680,400);
+			ctx.clearRect(290,0,50,400);
 			ctx.beginPath();
 			img = document.getElementById('zikudaDir');
 			ctx.drawImage(img, 270, 180);
@@ -100,41 +100,41 @@ var draw = () => {
 
 			if(lado == '1'){
 
-				ctx.clearRect(0,0,680,400);
+				ctx.clearRect(255,0,150,400);
 				ctx.beginPath();
 				img = document.getElementById('zikudaEsq01');
 				ctx.drawImage(img,270,180);
 
 				var intAtaqEsq =  setInterval(function(){
-					ctx.clearRect(0,0,680,400);
+					ctx.clearRect(255,0,150,400);
 					ctx.beginPath();
 					img = document.getElementById('zikudaEsq02');
 					ctx.drawImage(img, 248,173);
 
 					var intAtaqEsq01 = setInterval(function(){
 
-						ctx.clearRect(0,0,680,400);
+						ctx.clearRect(255,0,150,400);
 						ctx.beginPath();
 						img = document.getElementById('zikudaEsq03');
 						ctx.drawImage(img, 248, 173);
 
 						var vamosVoltar = setInterval(function(){
 
-							ctx.clearRect(0,0,680,400);
+							ctx.clearRect(255,0,150,400);
 							ctx.beginPath();
 							img = document.getElementById('zikudaEsq02');
 							ctx.drawImage(img, 248,173);							
 
 							var intAtaqEsq02 = setInterval(function(){
 
-								ctx.clearRect(0,0,680,400);
+								ctx.clearRect(255,0,150,400);
 								ctx.beginPath();
 								img = document.getElementById('zikudaEsq01');
 								ctx.drawImage(img, 270, 180);
 
 								var intAtaqEsq03 = setInterval(function(){
 
-									ctx.clearRect(0,0,680,400);
+									ctx.clearRect(255,0,150,400);
 									ctx.beginPath();
 									img = document.getElementById('zikudaEsq');
 									ctx.drawImage(img,270,180);
@@ -156,41 +156,41 @@ var draw = () => {
 
 			}else if(lado == '0'){
 
-				ctx.clearRect(0,0,680,400);
+				ctx.clearRect(290,0,150,400);
 				ctx.beginPath();
 				img = document.getElementById('zikudaDir01');
 				ctx.drawImage(img,270,180);
 
 				var intAtaqDir =  setInterval(function(){
-					ctx.clearRect(0,0,680,400);
+					ctx.clearRect(290,0,150,400);
 					ctx.beginPath();
 					img = document.getElementById('zikudaDir02');
 					ctx.drawImage(img, 270,173);
 
 					var intAtaqDir01 = setInterval(function(){
 
-						ctx.clearRect(0,0,680,400);
+						ctx.clearRect(290,0,150,400);
 						ctx.beginPath();
 						img = document.getElementById('zikudaDir03');
 						ctx.drawImage(img, 270, 173);
 
 						var vamosVoltar = setInterval(function(){
 
-							ctx.clearRect(0,0,680,400);
+							ctx.clearRect(290,0,150,400);
 							ctx.beginPath();
 							img = document.getElementById('zikudaDir02');
 							ctx.drawImage(img, 270,173);							
 
 							var intAtaqDir02 = setInterval(function(){
 
-								ctx.clearRect(0,0,680,400);
+								ctx.clearRect(290,0,150,400);
 								ctx.beginPath();
 								img = document.getElementById('zikudaDir01');
 								ctx.drawImage(img, 270, 180);
 
 								var intAtaqDir03 = setInterval(function(){
 
-									ctx.clearRect(0,0,680,400);
+									ctx.clearRect(290,0,150,400);
 									ctx.beginPath();
 									img = document.getElementById('zikudaDir');
 									ctx.drawImage(img,270,180);
@@ -293,13 +293,13 @@ var draw = () => {
 				ctx.clearRect(0,0,300,400);
 				img = document.getElementById('inimigoTerrestre0'+j);
 
-				if(l==1)
+				if(j==1)
 					altE = 170;
-				else if(l==2)
+				else if(j==2)
 					altE = 160;
-				else if(l==3)
+				else if(j==3)
 					altE = 155;
-				else if(l==4 || l==5)
+				else if(j==4 || l==5)
 					altE = 175;
 
 				
@@ -361,47 +361,22 @@ var draw = () => {
 		},10);
 	}	
 
+	var chamarInimigos = setInterval(chamarInimigosLoop, 2000);
 
-
-	function getRandomInt(min, max) {
-		min = Math.ceil(min);
-		max = Math.floor(max);
-		return Math.floor(Math.random() * (max - min)) + min;
+	function chamarInimigosLoop(){
+		var numeroAleatorio = Math.round(Math.random() * 10);
+		gameloop(numeroAleatorio);
 	}
 
-	for(var algumaCoisa = 0; algumaCoisa < 10; algumaCoisa++)
-		setTimeout(criarUnico, 1000);
-
-	for(var outraCoisa = 0; outraCoisa < 10; outraCoisa++){
-		if(sorteados[outraCoisa] % 2 == 0){
-			// var enviaInimigosEsq = setInterval(function(){
-			// 	enviaInimigoEsq();
-			// 	clearInterval(enviaInimigosEsq);
-			// },1000);	
-			setTimeout(enviaInimigoEsq, 1000);
-		} else {
-			// var enviaInimigosDir = setInterval(function(){
-			// 	enviaInimigoDir();
-			// 	clearInterval(enviaInimigosDir);
-			// },1000);
-			setTimeout(enviaInimigoDir, 1000);
+	function gameloop(numeroAleatorio){
+		console.log(numeroAleatorio);
+		while(numeroAleatorio >= 0 || numeroAleatorio <= 10){
+			if(numeroAleatorio % 2 === 0){
+				enviaInimigoDir();
+			} else {
+				enviaInimigoEsq();
+			}
+			break;
 		}
 	}
 }
-
-	var sorteados = [];
-	var valorMaximo = 1000;
-
-	function criarUnico() {
-	    if (sorteados.length == valorMaximo) {
-	        if (confirm('Já não há mais! Quer recomeçar?')) sorteados = [];
-	        else return;
-	    }
-	    var sugestao = Math.ceil(Math.random() * valorMaximo); // Escolher um numero ao acaso
-	    while (sorteados.indexOf(sugestao) >= 0) {  // Enquanto o numero já existir, escolher outro
-	        sugestao = Math.ceil(Math.random() * valorMaximo);
-	    }
-	    sorteados.push(sugestao); // adicionar este numero à array de numeros sorteados para futura referência
-	    console.log(sorteados);
-	    return sugestao; // devolver o numero único
-	}
