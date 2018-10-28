@@ -113,7 +113,7 @@ var draw = () => {
 
 					var intAtaqEsq01 = setInterval(function(){
 
-						ctx.clearRect(255,0,150,400);
+						ctx.clearRect(220,100,150,400);
 						ctx.beginPath();
 						img = document.getElementById('zikudaEsq03');
 						ctx.drawImage(img, 248, 173);
@@ -123,7 +123,8 @@ var draw = () => {
 							ctx.clearRect(255,0,150,400);
 							ctx.beginPath();
 							img = document.getElementById('zikudaEsq02');
-							ctx.drawImage(img, 248,173);							
+							ctx.drawImage(img, 248,173);
+							placar();							
 
 							var intAtaqEsq02 = setInterval(function(){
 
@@ -162,7 +163,7 @@ var draw = () => {
 				ctx.drawImage(img,270,180);
 
 				var intAtaqDir =  setInterval(function(){
-					ctx.clearRect(290,0,150,400);
+					ctx.clearRect(310,0,150,400);
 					ctx.beginPath();
 					img = document.getElementById('zikudaDir02');
 					ctx.drawImage(img, 270,173);
@@ -179,7 +180,8 @@ var draw = () => {
 							ctx.clearRect(290,0,150,400);
 							ctx.beginPath();
 							img = document.getElementById('zikudaDir02');
-							ctx.drawImage(img, 270,173);							
+							ctx.drawImage(img, 270,173);
+							placar();							
 
 							var intAtaqDir02 = setInterval(function(){
 
@@ -379,4 +381,12 @@ var draw = () => {
 			break;
 		}
 	}
+
+	var pontosJogador = 0;
+
+	function placar(){
+		pontosJogador++;
+		console.log(pontosJogador);
+	}
+
 }
